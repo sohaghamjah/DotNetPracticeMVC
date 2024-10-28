@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+
+    @{
+        var students = ViewData["AllStudents"] as List<StudnetModel>;
+    }
+
+    <table>
+        <tr>
+            <th>NAME</th>
+            <th>ROLL</th>
+            <th>GENDER</th>
+        </tr>
+        @{
+            foreach(var item in students)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Roll</td>
+                    <td>@item.Gender</td>
+                </tr>
+            }
+        }
+    </table>
+
+   @*  @{
+        <h2>@ViewData["company"]</h2>
+        <h3>@ViewData["established"]</h3>
+
+        foreach (var item in (string[])ViewData["EmployeeNames"])
+        {
+            <h3>@item</h3>
+        }
+        foreach (var item in (List<string>)ViewData["AgentNames"])
+        {
+            <h3>@item</h3>
+        }
+    } *@
+
+   @*  @{
+        var name = "Sohag Hamjah";
+        var email = "sohaghamjah@gmail.com";
+    }
+
+    <p>Full Name: @name</p>
+    <p>Email: @email</p>
+
+    @{
+        for(int i = 0; i<=10; i++)
+        {
+            <h2>@i</h2>
+        }
+    }
+
+    @{
+        string[] names = ["Sohag", "Homaun", "Rasel", "Mahfuz"];
+
+        foreach(var item in names)
+        {
+            <h2>@item</h2>
+        }
+    } *@
+</div>
