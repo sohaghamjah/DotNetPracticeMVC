@@ -1,9 +1,28 @@
-﻿@{
+﻿@model PracticeMVC.Models.Employee;
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
+
+    <div class="container">
+       <div class="row justify-content-center mt-5">
+            <div class="col-sm-4">
+                <form asp-action="Index" class="d-grid" asp-controller="Home">
+                    <input asp-for="Name" placeholder="Enter Your Name..." class="form-control form-group" />
+                    <br />
+                    <input asp-for="Age" placeholder="Enter Your Age..." class="form-control form-group" />
+                    <br />
+                    <input asp-for="Desigation" placeholder="Enter Your Designation"..." class="form-control form-group" />
+                    <br />
+                    <input asp-for="Salary" placeholder="Enter Your Salary..." class="form-control form-group" />
+                    <br />
+                    <input type="submit" value="Submit" class="btn btn-outline-danger" />
+                </form>
+            </div>
+       </div>
+    </div>
 
     @* @{ 
         var students = ViewData["AllStudents"] as List<StudnetModel>;
