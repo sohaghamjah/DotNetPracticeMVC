@@ -12,6 +12,10 @@
                 <form asp-action="Index" class="d-grid" asp-controller="Home">
                     <input asp-for="Name" placeholder="Enter Your Name..." class="form-control form-group" />
                     <br />
+                    <select asp-for="Gender" class="form-control" asp-items="Html.GetEnumSelectList<Gender>()">
+                        <option value="">Select Gender</option>
+                    </select>
+                    <br />
                     <input asp-for="Age" placeholder="Enter Your Age..." class="form-control form-group" />
                     <br />
                     <input asp-for="Desigation" placeholder="Enter Your Designation"..." class="form-control form-group" />
