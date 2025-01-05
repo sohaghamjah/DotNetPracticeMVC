@@ -37,6 +37,10 @@ namespace PracticeMVC.Controllers
 
             return View();
         }
+        [HttpPost]
+        public IActionResult Index(Employee employee) {
+            return View();
+        }
 
         public List<StudnetModel> getAllStudents() {
             return _studentRepository.getAllStudent();

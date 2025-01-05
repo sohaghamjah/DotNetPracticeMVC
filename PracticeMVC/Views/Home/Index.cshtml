@@ -3,14 +3,20 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+<div>
+    <h1 class="display-4 text-center">Welcome</h1>
 
     <div class="container">
        <div class="row justify-content-center mt-5">
             <div class="col-sm-4">
-                <form asp-action="Index" class="d-grid" asp-controller="Home">
+                <form asp-action="Index" asp-controller="Home" method="post">
+                    <label asp-for="Name">Full Name</label>
                     <input asp-for="Name" placeholder="Enter Your Name..." class="form-control form-group" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                    <br />
+                    <label asp-for="Email">Email Address</label>
+                    <input asp-for="Email" placeholder="Email Address..." class="form-control form-group" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
                     <br />
                     <select asp-for="Gender" class="form-control" asp-items="Html.GetEnumSelectList<Gender>()">
                         <option value="">Select Gender</option>
@@ -18,9 +24,20 @@
                     <br />
                     <input asp-for="Age" placeholder="Enter Your Age..." class="form-control form-group" />
                     <br />
-                    <input asp-for="Desigation" placeholder="Enter Your Designation"..." class="form-control form-group" />
+                    <input asp-for="Desigation" placeholder="Enter Your Designation..." class="form-control form-group" />
                     <br />
                     <input asp-for="Salary" placeholder="Enter Your Salary..." class="form-control form-group" />
+                    <br />
+                    <textarea asp-for="Description" class="form-control"></textarea>
+                    <br />
+                    <div class="form-check">
+                        <input asp-for="Married" class="form-check-input" id="flexCheckYes" type="radio" value="true">
+                        <label class="form-check-label" for="flexCheckYes">Married</label>
+                    </div>
+                    <div class="form-check">
+                        <input asp-for="Married" class="form-check-input" id="flexCheckNo" type="radio" value="false">
+                        <label class="form-check-label" for="flexCheckNo">Unmarried</label>
+                    </div>
                     <br />
                     <input type="submit" value="Submit" class="btn btn-outline-danger" />
                 </form>
